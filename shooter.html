@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10091f">
+  <title>Bug Hunter — Space Shooter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shooter.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="top-bar" aria-label="Game information">
+      <div class="stat"><span class="stat-label">SCORE</span><span id="score">000000</span></div>
+      <div class="stat"><span class="stat-label">LIVES</span><span id="lives" aria-label="3 lives">♥ ♥ ♥</span></div>
+      <div class="stat"><span class="stat-label">LEVEL</span><span id="level">01</span></div>
+      <div class="stat"><span class="stat-label">BEST</span><span id="best">000000</span></div>
+      <button id="mute-button" class="small-button" type="button" aria-label="Mute sound">SOUND: ON</button>
+    </header>
+
+    <section class="game-frame" aria-label="Bug Hunter game">
+      <canvas id="game-canvas" width="480" height="640" aria-label="Space shooter game area">
+        Your browser does not support canvas. Please try a modern browser.
+      </canvas>
+
+      <div id="power-status" class="power-status" aria-live="polite">
+        <span id="power-label"></span>
+        <span class="power-track"><span id="power-bar"></span></span>
+      </div>
+
+      <section id="start-screen" class="screen">
+        <p class="eyebrow">A TINY ARCADE GAME</p>
+        <h1>BUG<br>HUNTER</h1>
+        <p class="screen-copy">CLEAN UP THE SPACE BUGS!</p>
+        <p class="instructions">MOVE: ARROWS / A D<br>SHOOT: SPACE<br>PHONE: DRAG + FIRE</p>
+        <button id="start-button" class="action-button blink" type="button">PRESS START</button>
+      </section>
+
+      <section id="game-over-screen" class="screen is-hidden">
+        <p class="eyebrow">SHIP OUT OF SERVICE</p>
+        <h2>GAME OVER</h2>
+        <p class="screen-copy">FINAL SCORE</p>
+        <p id="final-score" class="final-score">000000</p>
+        <button id="play-again-button" class="action-button" type="button">PLAY AGAIN</button>
+      </section>
+    </section>
+
+    <div class="combo-row">
+      <span id="combo">COMBO x1</span>
+      <span id="boss-status" class="boss-status"></span>
+    </div>
+
+    <div class="mobile-controls" aria-label="Touch controls">
+      <p>DRAG ON SCREEN TO MOVE</p>
+      <button id="fire-button" class="fire-button" type="button">FIRE!</button>
+    </div>
+    <p class="footer-note">FIX BUGS. SAVE THE GALAXY.</p>
+  </main>
+  <script src="shooter.js"></script>
+</body>
+</html>
